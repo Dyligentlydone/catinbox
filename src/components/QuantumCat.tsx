@@ -441,14 +441,11 @@ const QuantumCat = () => {
   // Return the JSX for the component
   return (
     <div className="relative w-full min-h-screen overflow-hidden flex flex-col items-center justify-center">
-      <div className="relative w-[600px] h-[600px] overflow-hidden">
+      <div className="relative w-[90vw] max-w-[600px] aspect-square overflow-hidden">
         <canvas 
           ref={canvasRef} 
           className="absolute top-0 left-0 w-full h-full"
         />
-        <div className="absolute bottom-4 left-4 text-quantum-yellow text-sm">
-          33x slowed down
-        </div>
       </div>
 
       {/* Copy section directly below animation */}
