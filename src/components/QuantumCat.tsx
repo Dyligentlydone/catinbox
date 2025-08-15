@@ -152,7 +152,7 @@ const QuantumCat = () => {
 
     const frameInterval = setTimeout(() => {
       setFrame(prev => (prev + 1) % frames.length);
-    }, 8000);
+    }, 6000);
 
     return () => clearTimeout(frameInterval);
   }, [frame, atoms.length]);
@@ -183,8 +183,9 @@ const QuantumCat = () => {
           atom.x = atom.targetX;
           atom.y = atom.targetY;
         } else {
-          atom.x += dx * 0.2;
-          atom.y += dy * 0.2;
+          // Slightly slower again (0.16 -> 0.14)
+          atom.x += dx * 0.14;
+          atom.y += dy * 0.14;
         }
 
         ctx.beginPath();
