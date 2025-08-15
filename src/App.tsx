@@ -30,14 +30,14 @@ function App() {
 
       {/* Under-animation bar: responsive variants */}
       {/* Mobile (fits within viewport) */}
-      <div className="w-[92vw] max-w-[600px] mx-auto -mt-3 md:hidden flex items-center justify-center gap-6">
+      <div className="w-[92vw] max-w-[600px] mx-auto -mt-3 sm:hidden flex items-center justify-center gap-8">
         <DottedButton
           text="Join Community!"
-          width={260}
-          height={60}
-          dotStep={4}
-          font="bold 42px Arial"
-          pointSize={1.8}
+          width={300}
+          height={70}
+          dotStep={3}
+          font="bold 48px Arial, Helvetica, sans-serif"
+          pointSize={1.9}
           className="cursor-pointer"
           onClick={() => {
             const url = 'https://x.com/i/communities/1956338802244595784/';
@@ -48,12 +48,12 @@ function App() {
           fadeInFactor={0.05}
         />
         <DottedButton
-          text="𝕏"
-          width={44}
-          height={60}
-          dotStep={4}
-          font="bold 40px Arial"
-          pointSize={1.9}
+          text="X"
+          width={56}
+          height={70}
+          dotStep={2}
+          font="900 54px 'Arial Black', Arial, Helvetica, sans-serif"
+          pointSize={2.0}
           className="cursor-pointer"
           onClick={() => {
             const url = 'https://x.com/i/communities/1956338802244595784/';
@@ -66,14 +66,14 @@ function App() {
       </div>
 
       {/* Desktop/tablet */}
-      <div className="w-[90vw] max-w-[600px] mx-auto -mt-3 hidden md:flex items-center justify-start gap-10">
+      <div className="w-[90vw] max-w-[600px] md:max-w-[800px] mx-auto -mt-3 hidden sm:flex items-center justify-start gap-14">
         <DottedButton
           text="Join Community!"
-          width={480}
-          height={108}
-          dotStep={5}
-          font="bold 80px Arial"
-          pointSize={2.4}
+          width={600}
+          height={140}
+          dotStep={3}
+          font="bold 100px Arial, Helvetica, sans-serif"
+          pointSize={2.6}
           className="cursor-pointer"
           onClick={() => {
             const url = 'https://x.com/i/communities/1956338802244595784/';
@@ -84,11 +84,11 @@ function App() {
           fadeInFactor={0.03}
         />
         <DottedButton
-          text="𝕏"
-          width={80}
-          height={108}
-          dotStep={4}
-          font="bold 84px Arial"
+          text="X"
+          width={120}
+          height={140}
+          dotStep={2}
+          font="900 120px 'Arial Black', Arial, Helvetica, sans-serif"
           pointSize={2.6}
           className="cursor-pointer"
           onClick={() => {
