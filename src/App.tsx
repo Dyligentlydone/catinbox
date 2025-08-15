@@ -28,8 +28,45 @@ function App() {
       {/* Quantum Cat Animation - Full Screen */}
       <QuantumCat />
 
-      {/* Under-animation bar: left 'Join Community', right 'X' */}
-      <div className="w-[90vw] max-w-[600px] mx-auto -mt-3 flex items-center justify-start gap-10">
+      {/* Under-animation bar: responsive variants */}
+      {/* Mobile (fits within viewport) */}
+      <div className="w-[92vw] max-w-[600px] mx-auto -mt-3 md:hidden flex items-center justify-center gap-6">
+        <DottedButton
+          text="Join Community!"
+          width={260}
+          height={60}
+          dotStep={4}
+          font="bold 42px Arial"
+          pointSize={1.8}
+          className="cursor-pointer"
+          onClick={() => {
+            const url = 'https://x.com/i/communities/1956338802244595784/';
+            window.open(url, '_blank', 'noopener,noreferrer');
+          }}
+          maxStaggerMs={1200}
+          approachFactor={0.08}
+          fadeInFactor={0.05}
+        />
+        <DottedButton
+          text="𝕏"
+          width={44}
+          height={60}
+          dotStep={4}
+          font="bold 40px Arial"
+          pointSize={1.9}
+          className="cursor-pointer"
+          onClick={() => {
+            const url = 'https://x.com/i/communities/1956338802244595784/';
+            window.open(url, '_blank', 'noopener,noreferrer');
+          }}
+          maxStaggerMs={500}
+          approachFactor={0.1}
+          fadeInFactor={0.06}
+        />
+      </div>
+
+      {/* Desktop/tablet */}
+      <div className="w-[90vw] max-w-[600px] mx-auto -mt-3 hidden md:flex items-center justify-start gap-10">
         <DottedButton
           text="Join Community!"
           width={480}
