@@ -1,17 +1,8 @@
-import { createPortal } from 'react-dom';
 import DottedButton from './DottedButton';
 
 export default function SignaturePortal() {
-  const node = (
-    <div
-      style={{
-        position: 'fixed',
-        right: 16,
-        bottom: 16,
-        zIndex: 2147483647,
-        pointerEvents: 'auto',
-      }}
-    >
+  return (
+    <div className="w-full flex justify-end pr-6 pb-6">
       <DottedButton
         text="[ Done By Dyligent ]"
         width={300}
@@ -30,6 +21,4 @@ export default function SignaturePortal() {
       />
     </div>
   );
-
-  return createPortal(node, document.body);
 }

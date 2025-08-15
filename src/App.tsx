@@ -1,7 +1,6 @@
 import QuantumCat from './components/QuantumCat';
 import DottedButton from './components/DottedButton';
 import SignaturePortal from './components/SignaturePortal';
-import AddressPortal from './components/AddressPortal';
 
 function App() {
   return (
@@ -28,9 +27,6 @@ function App() {
 
       {/* Quantum Cat Animation - Full Screen */}
       <QuantumCat />
-
-      {/* Left-side vertical address */}
-      <AddressPortal address="FJv6JHHiQmVPpauia3VLxNBTNBL3S2uKtDB8u6X1SpUq" />
 
       <SignaturePortal />
     </div>
