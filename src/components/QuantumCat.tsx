@@ -440,7 +440,7 @@ const QuantumCat = () => {
   
   // Return the JSX for the component
   return (
-    <div className="relative w-full h-screen overflow-hidden flex items-center justify-center">
+    <div className="relative w-full min-h-screen overflow-hidden flex flex-col items-center justify-center">
       <div className="relative w-[600px] h-[600px] overflow-hidden">
         <canvas 
           ref={canvasRef} 
@@ -450,6 +450,8 @@ const QuantumCat = () => {
           33x slowed down
         </div>
       </div>
+
+      {/* Copy section directly below animation */}
     </div>
   );
 };

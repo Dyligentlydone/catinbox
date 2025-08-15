@@ -97,6 +97,23 @@ export default function DottedButton({
   const [atoms, setAtoms] = useState<Atom[]>([]);
   const startRef = useRef<number | null>(null);
 
+  // Ensure canvas is crisp on high-DPI displays
+  useEffect(() => {
+    const canvas = canvasRef.current;
+    if (!canvas) return;
+    const dpr = Math.max(1, window.devicePixelRatio || 1);
+    // Set backing store size
+    canvas.width = Math.floor(width * dpr);
+    canvas.height = Math.floor(height * dpr);
+    // Set display size via CSS
+    canvas.style.width = `${width}px`;
+    canvas.style.height = `${height}px`;
+    const ctx = canvas.getContext('2d');
+    if (ctx) {
+      ctx.setTransform(dpr, 0, 0, dpr, 0, 0); // scale drawing to logical units
+    }
+  }, [width, height]);
+
   // Init atoms to random positions, then animate into text
   useEffect(() => {
     const canvas = canvasRef.current;
@@ -135,7 +152,8 @@ export default function DottedButton({
 
     let raf = 0;
     const animate = () => {
-      ctx.clearRect(0, 0, canvas.width, canvas.height);
+      // Clear in logical units (after dpr scaling)
+      ctx.clearRect(0, 0, width, height);
       // Background transparent so page bg shows through
 
       const now = performance.now();
@@ -161,6 +179,12 @@ export default function DottedButton({
           atom.y += dy * approachFactor;
           atom.opacity = Math.min(1, atom.opacity + fadeInFactor);
         }
+
+        // Optional tiny halo to improve readability on dark bg
+        ctx.beginPath();
+        ctx.arc(atom.x, atom.y, atom.size + 0.2, 0, Math.PI * 2);
+        ctx.fillStyle = `rgba(0, 0, 0, ${Math.min(0.12, atom.opacity * 0.12)})`;
+        ctx.fill();
 
         ctx.beginPath();
         ctx.arc(atom.x, atom.y, atom.size, 0, Math.PI * 2);
