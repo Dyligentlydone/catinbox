@@ -12,4 +12,6 @@ body {
   margin: 0;
   min-width: 320px;
   min-height: 100vh;
+  /* Global site background to match QuantumCat canvas */
+  background-color: #1e3a8a;
 }
