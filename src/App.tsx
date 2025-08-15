@@ -30,7 +30,7 @@ function App() {
 
       {/* Under-animation bar: responsive variants */}
       {/* Mobile (fits within viewport) */}
-      <div className="w-[92vw] max-w-[600px] mx-auto -mt-3 sm:hidden flex items-center justify-center gap-8">
+      <div className="w-[94vw] max-w-[640px] mx-auto -mt-32 sm:hidden flex items-center justify-center gap-10">
         <DottedButton
           text="Join Community!"
           width={300}
@@ -66,7 +66,7 @@ function App() {
       </div>
 
       {/* Desktop/tablet */}
-      <div className="w-[90vw] max-w-[600px] md:max-w-[800px] mx-auto -mt-3 hidden sm:flex items-center justify-start gap-14">
+      <div className="w-[90vw] max-w-[700px] md:max-w-[900px] mx-auto -mt-48 hidden sm:flex items-center justify-start gap-16">
         <DottedButton
           text="Join Community!"
           width={600}
@@ -101,6 +101,7 @@ function App() {
         />
       </div>
 
+      <div className="flex-grow min-h-[20vh]"></div>
       <SignaturePortal />
     </div>
   );
