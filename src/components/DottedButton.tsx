@@ -180,16 +180,12 @@ export default function DottedButton({
           atom.opacity = Math.min(1, atom.opacity + fadeInFactor);
         }
 
-        // Optional tiny halo to improve readability on dark bg
-        ctx.beginPath();
-        ctx.arc(atom.x, atom.y, atom.size + 0.2, 0, Math.PI * 2);
-        ctx.fillStyle = `rgba(0, 0, 0, ${Math.min(0.12, atom.opacity * 0.12)})`;
-        ctx.fill();
-
-        ctx.beginPath();
-        ctx.arc(atom.x, atom.y, atom.size, 0, Math.PI * 2);
+        // Draw as crisp squares aligned to pixel grid
+        const size = Math.max(1, Math.round(atom.size));
+        const ix = Math.round(atom.x - size / 2);
+        const iy = Math.round(atom.y - size / 2);
         ctx.fillStyle = `rgba(255, 222, 0, ${atom.opacity})`;
-        ctx.fill();
+        ctx.fillRect(ix, iy, size, size);
       });
 
       raf = requestAnimationFrame(animate);
